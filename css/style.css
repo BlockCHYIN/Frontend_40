@@ -9,12 +9,19 @@
 
 body {
   font-family: "OpenSans", sans-serif;
+  margin: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -50,19 +57,47 @@ h2.section-title.lighten {
   font-size: 18px;
   line-height: 30px;
 }
+
+.header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 /* Navbar styles here */
 nav.navbar {
+  width: 100%;
   outline: 2px solid skyblue;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  padding: 30px 55px 0 55px;
+  box-sizing: border-box;
+}
+
+.nav-holder {
+  display: flex;
+  align-items: center;
+  height: 56px;
 }
 .nav-links {
   background-color: aqua;
-  display: inline-block;
+  display: flex;
 }
 nav.navbar .btn-box {
   display: inline-block;
 }
+
+.logo-img {
+  width: 68px;
+  height: 56px;
+  margin: 0 32px;
+}
 .nav-links li {
   display: inline-block;
+  margin: 0 40px;
 }
 a.nav-link {
   font-weight: 600;
@@ -74,6 +109,33 @@ a.nav-link:focus,
 a.nav-link:hover,
 .social-link {
   color: var(--primary-color);
+}
+
+/* Main styles here */
+
+.section-box {
+  width: 100%;
+  padding: 130px 55px;
+}
+
+.about-section,
+.why-us_section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about_image-box {
+  display: flex;
+  justify-content: space-between;
+  width: 48%;
+}
+
+.about_image-box img {
+  width: 48%;
+}
+
+.description-container {
+  width: 48%;
 }
 
 p .section-description {
@@ -98,6 +160,7 @@ p .section-description {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   border: 1px solid #ff6c00;
+  display: inline-block;
   box-sizing: border-box;
   border-radius: 25px;
   padding: 12px 20px;
@@ -107,13 +170,33 @@ p .section-description {
   color: var(--text-primary);
 }
 
-.price-list {
-  display: inline-block;
+.slider {
+  width: calc(100% - 155px);
+  background-image: url(../image/Slider/Slider_img-1.jpg);
 }
 
+.sidebar {
+  width: 155px;
+  height: 100vh;
+  background-color: white;
+}
+
+.price-list {
+  display: flex;
+}
+
+.price-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.price-list {
+  display: flex;
+  justify-content: space-between;
+}
 .price-item p,
 .price-item span {
-  display: inline-block;
+  display: flex;
   font-size: 18px;
   line-height: 30px;
   color: var(--text-secondary);
@@ -121,10 +204,19 @@ p .section-description {
 
 /* Why us styles here */
 
+.number-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 48%;
+  padding: 0 100px;
+}
 .number-box {
   background: #f7f7f7;
-  width: 170px;
+  min-width: 170px;
+  width: 48%;
   height: 132px;
+  margin-top: 30px;
   display: inline-block;
 }
 .number-box p,
@@ -144,6 +236,11 @@ p .section-description {
   line-height: 15px;
 }
 
+.masters-list {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 300px;
+}
 .master-card p {
   font-size: 18px;
   line-height: 25px;
