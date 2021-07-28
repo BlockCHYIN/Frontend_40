@@ -58,6 +58,25 @@ h2.section-title.lighten {
   line-height: 30px;
 }
 
+.suptitle-secondary {
+  color: #9da4bd;
+}
+
+.suptitle-secondary::before,
+.suptitle-primary::before {
+  width: 60px;
+  height: 1px;
+  background: rgba(48, 48, 48, 1);
+  content: ("");
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.suptitle-primary::before {
+  background: rgba(48, 48, 48, 1);
+}
+
 .header {
   height: 100vh;
   width: 100%;
