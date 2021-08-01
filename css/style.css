@@ -26,20 +26,32 @@ a {
   text-decoration: none;
 }
 
-.suptitle-primary {
+.suptitle-primary,
+.suptitle-secondary {
   font-weight: 600;
   font-size: 11px;
   line-height: 15px;
   color: var(--text-primary);
 }
 .suptitle-secondary {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
+  color: #9da4bd99;
 }
+
+.suptitle-secondary::before,
+.suptitle-primary::before {
+  width: 60px;
+  height: 1px;
+  background: #9da4bd99;
+  content: ("");
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.suptitle-primary::before {
+  background: rgba(48, 48, 48, 1);
+}
+
 h2.section-title {
   font-family: "Raleway";
   font-weight: bold;
@@ -58,25 +70,6 @@ h2.section-title.lighten {
   line-height: 30px;
 }
 
-.suptitle-secondary {
-  color: #9da4bd;
-}
-
-.suptitle-secondary::before,
-.suptitle-primary::before {
-  width: 60px;
-  height: 1px;
-  background: rgba(48, 48, 48, 1);
-  content: ("");
-  display: inline-block;
-  margin-right: 20px;
-  vertical-align: middle;
-}
-
-.suptitle-primary::before {
-  background: rgba(48, 48, 48, 1);
-}
-
 .header {
   height: 100vh;
   width: 100%;
@@ -86,7 +79,6 @@ h2.section-title.lighten {
 /* Navbar styles here */
 nav.navbar {
   width: 100%;
-  outline: 2px solid skyblue;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -96,37 +88,38 @@ nav.navbar {
   box-sizing: border-box;
 }
 
+.logo-img {
+  width: 68px;
+  height: 56px;
+  fill: rgba(48, 48, 48, 1);
+}
+
 .nav-holder {
   display: flex;
   align-items: center;
   height: 56px;
 }
-.nav-links {
-  background-color: aqua;
-  display: flex;
-}
+
 nav.navbar .btn-box {
-  display: inline-block;
 }
 
-.logo-img {
-  width: 68px;
-  height: 56px;
-  margin: 0 32px;
+.nav-links {
+  display: flex;
 }
+
 .nav-links li {
-  display: inline-block;
   margin: 0 40px;
 }
+
 a.nav-link {
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
   color: #fff;
 }
-a.nav-link:focus,
+
 a.nav-link:hover,
-.social-link {
+.social-link:hover {
   color: var(--primary-color);
 }
 
@@ -158,9 +151,9 @@ a.nav-link:hover,
 }
 
 p .section-description {
+  font-weight: normal;
   font-size: 18px;
   line-height: 30px;
-  letter-spacing: 0.02em;
   color: var(--text-primary-lighten);
 }
 
@@ -168,8 +161,7 @@ p .section-description {
   font-weight: 600;
   font-size: 11px;
   line-height: 15px;
-  letter-spacing: 0.2em;
-  color: var(--primary-color);
+  color: var(--text-primary);
 }
 
 .primary-btn {
@@ -191,31 +183,58 @@ p .section-description {
 
 .slider {
   width: calc(100% - 155px);
-  background-image: url(../image/Slider/Slider_img-1.jpg);
+  background-image: linear-gradient(310def, rgb(000 / 21%), #000000d4),
+    url(../image/Slider/Slider_img-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .sidebar {
   width: 155px;
   height: 100vh;
-  background-color: white;
+  background-color: #fff;
+}
+
+/* Price styles */
+.price-section {
+  background-image: url(../image/bg.png);
+  background-color: rgba(17, 19, 25, 1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.price-box {
+  display: flex;
 }
 
 .price-list {
-  display: flex;
+  width: 49%;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.price-list:nth-child(odd) {
+  background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%)
+    red;
+}
+
+.price-list:nth-child(even) {
+  background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
+  background-color: orange;
 }
 
 .price-item {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
 }
-.price-list {
-  display: flex;
-  justify-content: space-between;
-}
+
 .price-item p,
 .price-item span {
-  display: flex;
   font-size: 18px;
   line-height: 30px;
   color: var(--text-secondary);
@@ -236,11 +255,10 @@ p .section-description {
   width: 48%;
   height: 132px;
   margin-top: 30px;
-  display: inline-block;
 }
 .number-box p,
 .number-box span {
-  display: inline-block;
+  display: block;
   font-weight: bold;
   font-size: 42px;
   line-height: 57px;
@@ -253,6 +271,12 @@ p .section-description {
   font-weight: 600;
   font-size: 11px;
   line-height: 15px;
+}
+
+/* Masters styles here */
+
+.master-box {
+  background-color: rgba(247, 247, 247, 1);
 }
 
 .masters-list {
@@ -271,6 +295,36 @@ p .section-description {
   text-align: center;
   color: #ff6c00;
 }
+
+.master-social-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 90px;
+  margin-top: 30px;
+}
+.master-social-link {
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.master-social-link:hover svg,
+.master-social-link:focus svg {
+  fill: var(--primary-color);
+}
+
+.master-social-link svg {
+  height: 20px;
+  fill: rgba(48, 48, 48, 1);
+}
+
+/* Foter styles here */
+
 .footer-contacts {
   font-weight: normal;
   font-size: 18px;
