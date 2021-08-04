@@ -325,6 +325,76 @@ p .section-description {
 
 /* Foter styles here */
 
+.footer {
+  width: 100%;
+  min-height: 640px;
+  border-color: var(--secondary-color);
+  padding: 0 50px;
+  display: flex;
+  background-image: url(../image/bg.jpg);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.footer-form,
+.footer-contacts {
+  width: 50%;
+  height: inherit;
+}
+
+.footer-contacts {
+  padding: 130px 105px 130px 100px;
+}
+
+.contacts-box {
+  padding-left: 50px;
+}
+
+.contacts-box > adress {
+  position: relative;
+}
+.contacts-box > a::before,
+.contacts-box > adress::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  color: red;
+  left: -40px;
+  top: 7px;
+}
+
+.contacts-box > adress::before {
+  background-image: url(../image/map-pin.svg);
+}
+
+.contacts-box a:nth-of-type(1)::before {
+  background-color: #000;
+  background-image: url(../image/symbol-defs.svg);
+}
+
+.contacts-box a:last-of-type(1)::before {
+  background-color: rgb(29, 12, 12);
+  background-image: url(../image/Shape.svg);
+}
+
+.contacts-box > a {
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.copyright {
+  width: 100%;
+  min-height: 125px;
+  height: auto;
+  border-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+}
+
 .footer-contacts {
   font-weight: normal;
   font-size: 18px;
