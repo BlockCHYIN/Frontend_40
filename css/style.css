@@ -26,6 +26,14 @@ a {
   text-decoration: none;
 }
 
+@keyframes infiniteRotate {
+  0% {
+    transform: rotate();
+  }
+  100% {
+  }
+}
+
 .suptitle-primary,
 .suptitle-secondary {
   font-weight: 600;
@@ -92,6 +100,9 @@ nav.navbar {
   width: 68px;
   height: 56px;
   fill: rgba(48, 48, 48, 1);
+  animation-name: infiniteRotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
 .nav-holder {
@@ -283,6 +294,7 @@ p .section-description {
   display: flex;
   justify-content: space-between;
   flex-basis: 300px;
+  text-align: center;
 }
 .master-card p {
   font-size: 18px;
@@ -323,11 +335,37 @@ p .section-description {
   fill: rgba(48, 48, 48, 1);
 }
 
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-description {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(0 0 0 0);
+  position: absolute;
+  bottom: -100%;
+  transition: transform 0.3s linear;
+  color: #fff;
+  padding: 20px;
+}
+
+.gallery-card:hover .gallery-description {
+  transform: translateY(-100%);
+}
+
 /* Foter styles here */
 
 .footer {
   width: 100%;
   min-height: 640px;
+  height: auto;
   border-color: var(--secondary-color);
   padding: 0 50px;
   display: flex;
@@ -335,6 +373,7 @@ p .section-description {
   background-size: 50% 100%;
   background-repeat: no-repeat;
   background-position: right top;
+  color: var(--text-secondary);
 }
 
 .footer-form,
@@ -348,12 +387,13 @@ p .section-description {
 }
 
 .contacts-box {
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 .contacts-box > adress {
   position: relative;
 }
+
 .contacts-box > a::before,
 .contacts-box > adress::before {
   content: "";
@@ -361,8 +401,8 @@ p .section-description {
   width: 24px;
   height: 24px;
   color: red;
-  left: -40px;
-  top: 7px;
+  left: -41px;
+  top: 3px;
 }
 
 .contacts-box > adress::before {
@@ -370,7 +410,6 @@ p .section-description {
 }
 
 .contacts-box a:nth-of-type(1)::before {
-  background-color: #000;
   background-image: url(../image/symbol-defs.svg);
 }
 
@@ -381,6 +420,7 @@ p .section-description {
 
 .contacts-box > a {
   position: relative;
+  display: block;
   color: var(--text-secondary);
 }
 
@@ -390,7 +430,7 @@ p .section-description {
   height: auto;
   border-color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 0 50px;
 }
