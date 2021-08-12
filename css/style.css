@@ -28,9 +28,10 @@ a {
 
 @keyframes infiniteRotate {
   0% {
-    transform: rotate();
+    transform: rotate(0deg);
   }
   100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -187,6 +188,8 @@ p .section-description {
   border-radius: 25px;
   padding: 12px 20px;
   color: #fff;
+  background-color: transparent;
+  cursor: pointer;
 }
 .primary-btn .darken {
   color: var(--text-primary);
@@ -195,7 +198,7 @@ p .section-description {
 .slider {
   width: calc(100% - 155px);
   background-image: linear-gradient(310def, rgb(000 / 21%), #000000d4),
-    url(../image/Slider/Slider_img-1.jpg);
+    url(../image/Slider.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -216,24 +219,21 @@ p .section-description {
   background-attachment: fixed;
 }
 
-.price-box {
-  display: flex;
-}
-
 .price-list {
   width: 49%;
   display: inline-flex;
   flex-wrap: wrap;
 }
 
+.price-box {
+  display: flex;
+}
 .price-list:nth-child(odd) {
-  background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%)
-    red;
+  background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
 }
 
 .price-list:nth-child(even) {
   background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
-  background-color: orange;
 }
 
 .price-item {
@@ -294,7 +294,7 @@ p .section-description {
   display: flex;
   justify-content: space-between;
   flex-basis: 300px;
-  text-align: center;
+  /* text-align: center; */
 }
 .master-card p {
   font-size: 18px;
@@ -323,6 +323,38 @@ p .section-description {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.master-social-link::before,
+.master-social-link::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  /* background-image: url(../image/svg/instagram.svg); */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.2s linear;
+}
+
+.master-social-link.inst::before,
+.master-social-link.inst::after {
+  background-image: url(../image/svg/instagram.svg);
+}
+
+.master-social-link::after {
+  transform: translateY(50px);
+}
+
+.master-social-link:hover::before {
+  transform: translateY(-50px);
+}
+
+.master-social-link:hover::after {
+  transform: translateY(0px);
 }
 
 .master-social-link:hover svg,
@@ -345,10 +377,14 @@ p .section-description {
   overflow: hidden;
 }
 
+/* img .gallery-card {
+  height: 100%;
+} */
+
 .gallery-description {
   width: 100%;
   height: 100px;
-  background-color: rgb(0 0 0 0);
+  background-color: rgb(0 0 0 /75%);
   position: absolute;
   bottom: -100%;
   transition: transform 0.3s linear;
@@ -366,10 +402,10 @@ p .section-description {
   width: 100%;
   min-height: 640px;
   height: auto;
-  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
   padding: 0 50px;
   display: flex;
-  background-image: url(../image/bg.jpg);
+  background-image: url(../image/Bg.jpg);
   background-size: 50% 100%;
   background-repeat: no-repeat;
   background-position: right top;
@@ -382,12 +418,56 @@ p .section-description {
   height: inherit;
 }
 
+.footer-form .form-field {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9da4bd60;
+  outline: none;
+}
+
+.footer-form .field-label {
+  position: relative;
+  display: inline-block;
+}
+
+.field-label:hover .form-field,
+.footer-form .form-field:focus {
+  border-color: #fff;
+}
+
+.footer-form .field-label legend {
+  transition: translate, 0.1s linear;
+  position: absolute;
+  color: #9da4bd60;
+  top: -3px;
+}
+
+.field-label:hover legend {
+  color: #fff;
+}
+
+.footer-form .form-field:focus + legend {
+  transform: translate(-2px, -24px);
+  color: #fff;
+}
+
+textarea.form-field {
+  width: 100%;
+  display: block;
+  resize: none;
+}
+
+textarea.form-field::placeholder {
+  color: #fff;
+}
+
 .footer-contacts {
   padding: 130px 105px 130px 100px;
 }
 
 .contacts-box {
   padding-left: 40px;
+  display: inline-block;
 }
 
 .contacts-box > adress {
@@ -400,7 +480,7 @@ p .section-description {
   position: absolute;
   width: 24px;
   height: 24px;
-  color: red;
+  /* color: red; */
   left: -41px;
   top: 3px;
 }
@@ -410,12 +490,13 @@ p .section-description {
 }
 
 .contacts-box a:nth-of-type(1)::before {
-  background-image: url(../image/symbol-defs.svg);
+  background-image: url(../image/svg/Shape.svg);
+  background-repeat: no-repeat;
 }
 
 .contacts-box a:last-of-type(1)::before {
   background-color: rgb(29, 12, 12);
-  background-image: url(../image/Shape.svg);
+  background-image: url(../image/svg/mail.svg);
 }
 
 .contacts-box > a {
