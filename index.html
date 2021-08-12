@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-
   <body>
     <header class="header">
       <!-- Sidebar -->
@@ -201,10 +201,10 @@
             <p>John Smith</p>
             <span>Extreme Barber</span>
             <div class="master-social-box">
-              <a href="" class="master-social-link">
-                <svg>
+              <a href="" class="master-social-link inst">
+                <!-- <svg>
                   <use href="./image/symbol-defs.svg#icon-instagram-2-1"></use>
-                </svg>
+                </svg> -->
               </a>
               <a href="" class="master-social-link">
                 <svg>
@@ -296,31 +296,62 @@
           >На латинском языке “барба” означает “борода”</span
         >
         <div class="image-gallery">
-          div.gallery-card*4>gallery-description
-          <img
-            src="./image/Rectangle 25.jpg"
-            alt="Мастер в парихмахерской делает стрижку"
-            width="270"
-            height="360"
-          />
-          <img
-            src="./image/Rectangle 26.jpg"
-            alt="Мастер намазывает лицо пенной"
-            width="270"
-            height="360"
-          />
-          <img
-            src="./image/Rectangle 27.jpg"
-            alt="Мастер прилаживает горячее полотенце к лицу"
-            width="270"
-            height="360"
-          />
-          <img
-            src="./image/Rectangle 28.jpg"
-            alt="Мастер выщупывает пинцетом седые волосы на затылке"
-            width="270"
-            height="360"
-          />
+          <div class="gallery-card">
+            <div class="gallery-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Blanditiis iure ratione saepe quas a quibusdam odit voluptatum
+              voluptate doloremque. Commodi, atque nostrum. Porro voluptatem et
+              eveniet quos qui, impedit animi.
+            </div>
+            <img
+              src="./image/Rectangle 25.jpg"
+              alt="Мастер в парихмахерской делает стрижку"
+              width="270"
+              height="360"
+            />
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Blanditiis iure ratione saepe quas a quibusdam odit voluptatum
+              voluptate doloremque. Commodi, atque nostrum. Porro voluptatem et
+              eveniet quos qui, impedit animi.
+            </div>
+            <img
+              src="./image/Rectangle 26.jpg"
+              alt="Мастер намазывает лицо пенной"
+              width="270"
+              height="360"
+            />
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Blanditiis iure ratione saepe quas a quibusdam odit voluptatum
+              voluptate doloremque. Commodi, atque nostrum. Porro voluptatem et
+              eveniet quos qui, impedit animi.
+            </div>
+            <img
+              src="./image/Rectangle 27.jpg"
+              alt="Мастер прилаживает горячее полотенце к лицу"
+              width="270"
+              height="360"
+            />
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Blanditiis iure ratione saepe quas a quibusdam odit voluptatum
+              voluptate doloremque. Commodi, atque nostrum. Porro voluptatem et
+              eveniet quos qui, impedit animi.
+            </div>
+            <img
+              src="./image/Rectangle 28.jpg"
+              alt="Мастер выщупывает пинцетом седые волосы на затылке"
+              width="270"
+              height="360"
+            />
+          </div>
         </div>
       </section>
     </main>
@@ -328,8 +359,37 @@
     <footer class="footer" id="footer">
       <div class="footer-form">
         <h2 class="section-title lighten">Онлайн запись</h2>
-        <form action="">
-          <input type="submit" class="primary-btn" />
+        <form action="#">
+          <label for="userName" class="field-label">
+            <input
+              type="text"
+              name="userName"
+              class="form-field"
+              required
+              placeholder="Имя"
+            />
+            <legend>Имя*</legend>
+          </label>
+
+          <label for="userName" class="field-label">
+            <input
+              type="tel"
+              name="userPhone"
+              id="userPhone"
+              class="form-field"
+              required
+            />
+            <legend>Телефон*</legend>
+          </label>
+
+          <textarea
+            name="userMessage"
+            class="form-field"
+            cols="30"
+            rows="10"
+            placeholder="Сообщение"
+          ></textarea>
+          <button type="submit" class="primary-btn">Отправить</button>
         </form>
       </div>
       <div class="footer-contacts">
