@@ -227,7 +227,9 @@ p .section-description {
 
 .price-box {
   display: flex;
+  margin-bottom: 30px;
 }
+
 .price-list:nth-child(odd) {
   background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
 }
@@ -370,11 +372,17 @@ p .section-description {
 .image-gallery {
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .gallery-card {
   position: relative;
   overflow: hidden;
+  width: 20%;
+}
+
+.gallery-card img {
+  width: 100%;
 }
 
 /* img .gallery-card {
@@ -412,10 +420,17 @@ p .section-description {
   color: var(--text-secondary);
 }
 
+.footer-form-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .footer-form,
 .footer-contacts {
   width: 50%;
   height: inherit;
+  padding-right: 50px;
 }
 
 .footer-form .form-field {
@@ -423,11 +438,15 @@ p .section-description {
   border: none;
   border-bottom: 1px solid #9da4bd60;
   outline: none;
+  margin-bottom: 40px;
+  width: 100%;
+  color: #fff;
 }
 
 .footer-form .field-label {
   position: relative;
   display: inline-block;
+  width: calc(50%-15px);
 }
 
 .field-label:hover .form-field,
@@ -458,6 +477,12 @@ textarea.form-field {
 }
 
 textarea.form-field::placeholder {
+  color: #9da4bd7c;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+
+  font-weight: 600;
+  font-size: 13px;
   color: #fff;
 }
 
