@@ -1,0 +1,19 @@
+@import "base/normalize";
+
+// Utils
+@import "utils/variables/breakpoints";
+@import "utils/variables/colors";
+@import "utils/mixins/responsive";
+@import "utils/mixins/images";
+
+//Components
+@import "components/headers";
+@import "components/buttons";
+// Layout
+@import "layout/header";
+@import "layout/about";
+@import "layout/price";
+@import "layout/why-us";
+@import "layout/masters";
+@import "layout/gallery";
+@import "layout/footer";
